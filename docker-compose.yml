@@ -23,13 +23,28 @@ services:
         networks:
             - sail
         depends_on:
+            - postgre
             - mysql
             - redis
             - meilisearch
             - mailhog
             - selenium
+    #setando configurações para usar o postgre
+    postgre:
+        image: postgres
+        container_name: postgre-database
+        restart: unless-stopped
+        environment: 
+            POSTGRES_PASSWORD: secret
+            POSTGRES_DB: laravel_docker
+        volumes:
+            - ./postgres-data:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+            
     mysql:
         image: 'mysql/mysql-server:8.0'
+        container_name: mysql
         ports:
             - '${FORWARD_DB_PORT:-3306}:3306'
         environment:
@@ -50,6 +65,7 @@ services:
             timeout: 5s
     redis:
         image: 'redis:alpine'
+        container_name: redis
         ports:
             - '${FORWARD_REDIS_PORT:-6379}:6379'
         volumes:
@@ -62,6 +78,7 @@ services:
             timeout: 5s
     meilisearch:
         image: 'getmeili/meilisearch:latest'
+        container_name: meilisearch
         ports:
             - '${FORWARD_MEILISEARCH_PORT:-7700}:7700'
         volumes:
@@ -74,6 +91,7 @@ services:
             timeout: 5s
     mailhog:
         image: 'mailhog/mailhog:latest'
+        container_name: mailhog
         ports:
             - '${FORWARD_MAILHOG_PORT:-1025}:1025'
             - '${FORWARD_MAILHOG_DASHBOARD_PORT:-8025}:8025'
@@ -81,6 +99,7 @@ services:
             - sail
     selenium:
         image: 'selenium/standalone-chrome'
+        container_name: selenium
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         volumes:
