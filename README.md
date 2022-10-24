@@ -8,13 +8,13 @@ De qualquer forma, é um projeto que serve de aprendizado, cumpre sua funcionali
 
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Setup
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+O projeto foi feito usando o framework de PHP Laravel, e como opção para banco de dados, o PostgreSQL.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Para criar a tabela utilizada para persistir os dados, é necessário executar o seguinte comando na pasta raiz do projeto:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+> php artisan migrate
 
 ## Laravel Sponsors
 
