@@ -26,4 +26,22 @@ Para criar a tabela utilizada para persistir os dados, é necessário executar o
 
 ## License
 
+## Executando a aplicação
+
+Para subir todo o projeto, entre no diretório raiz, e execute
+
+> docker-compose up
+
+Este comando irá inicializar nosso projeto. 
+
+Após finalizado, execute:
+
+> php artisan serve
+
+Com isso, o servidor php estará de pé.
+
+Para acessar a página inicial do projeto, nossa home, acesse 
+
+> http://localhost:8000/dados
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
