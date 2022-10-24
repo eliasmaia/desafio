@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DataController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::controller(DataController::class)->group(function(){
+    Route::get('dados', 'index');
+    Route::post('dados-import', 'import')->name('dados.import');
 });

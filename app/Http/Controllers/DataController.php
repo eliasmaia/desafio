@@ -3,21 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Exports\UsersExport;
-use App\Imports\UsersImport;
+use App\Imports\DataImport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Models\User;
+use App\Models\Data;
 
-class UserController extends Controller
+class DataController extends Controller
 {
     /**
     * @return \Illuminate\Support\Collection
     */
     public function index()
     {
-        $users = User::get();
+        $dados = Data::get();
   
-        return view('users', compact('users'));
+        return view('dados', compact('dados'));
     }
        
      /**
@@ -28,7 +27,7 @@ class UserController extends Controller
         $path1 = request()->file('file')->store('temp');
         $path = storage_path('app').'/'.$path1;
 
-        Excel::import(new UsersImport, $path);
+        Excel::import(new DataImport, $path);
         
         return back();
     }
