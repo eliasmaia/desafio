@@ -4,10 +4,6 @@ Este projeto se trata de uma aplicação desafio, que faz o upload de um arquivo
 
 De qualquer forma, é um projeto que serve de aprendizado, cumpre sua funcionalidade com limitação, e pode ser aperfeiçoado.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
-
 ## Setup
 
 O projeto foi feito usando o framework de PHP Laravel, e como opção para banco de dados, o PostgreSQL.
@@ -20,11 +16,7 @@ Para criar a tabela utilizada para persistir os dados, é necessário executar o
 
 
 ### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
 - **[Tighten Co.](https://tighten.co)**
-
-## License
 
 ## Executando a aplicação
 
@@ -43,5 +35,7 @@ Com isso, o servidor php estará de pé.
 Para acessar a página inicial do projeto, nossa home, acesse 
 
 > http://localhost:8000/dados
+
+## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
